@@ -24,7 +24,17 @@ echo
 
 echo -n "Linux version: "
 uname -a
-lsb_release
+if [ -e lsb_release ]
+then
+	lsb_release
+fi
+
+if [ -f /etc/os-version ]
+then
+	echo "OS-version file:"
+	cat /etc/os-version
+fi
+
 echo
 
 echo -n "Uptime: "
