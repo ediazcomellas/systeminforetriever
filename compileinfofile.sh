@@ -24,15 +24,15 @@ echo
 
 echo -n "Linux version: "
 uname -a
-if [ -e lsb_release ]
+if [ -x `which lsb_release` ]
 then
-	lsb_release
+	lsb_release -a
 fi
 
 if [ -f /etc/os-version ]
 then
-	echo "OS-version file:"
-	cat /etc/os-version
+	echo "OS-release file:"
+	cat /etc/os-release
 fi
 
 echo
